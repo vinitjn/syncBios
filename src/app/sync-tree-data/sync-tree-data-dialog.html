@@ -1,0 +1,29 @@
+<h1 mat-dialog-title>Hi {{data.name}}</h1>
+
+<label for="fname">Title :</label>
+<input type="text" [(ngModel)]="userSocialMaps.title" id="title" name="title">
+<label for="fname">Link :</label>
+<input type="text" [(ngModel)]="userSocialMaps.socialMediaLink" id="fname" name="fname">
+
+<label for="selectSocialMedia">Choose a Site:</label>
+
+<select name="selectSocialMedia" [(ngModel)]="userSocialMaps.socialMediaId" id="selectSocialMedia">
+  <option value="0">--SELECT--</option>
+  <option value="1">Facebook</option>
+  <option value="2">Instagram</option>
+  <option value="3">Youtube</option>
+  <option value="4">Twitter</option>
+  <option value="5">Threads</option>
+  <option value="6">WhatsApp</option>
+  <option value="7">Telegram</option>
+  <option value="8">Others</option>
+</select>
+
+<p>Update Profile Image:</p>
+<input type="file" name="myFile" (change)="fileEvent($event)" />
+
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button (click)="onAddClick()">Add</button>
+</div>
+

@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>Hi {{data.name}}</h1>
+<label for="cars">Choose a Site:</label>
+
+<select name="cars" [(ngModel)]="tagPerpleDetailsData.socialMediaId" id="cars">
+  <option value="0">Insta</option>
+  <option value="1">Facebook</option>
+  <option value="2">whatsapp</option>
+</select>
+<label for="fname">ID :</label>
+<input type="text" [(ngModel)]="tagPerpleDetailsData.personMediaId" id="fname" name="fname">
+<label for="fname">Name:</label>
+<input type="text"  [(ngModel)]="tagPerpleDetailsData.name" id="fname" name="fname"><br/>
+
+Verify Person:
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button (click)="onNoClick()">Add</button>
+</div>

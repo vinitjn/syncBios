@@ -1,0 +1,8 @@
+<div *ngFor="let field of this.fieldArray">
+<p>{{field}}</p>
+<input #input (focusout)="updateDataset(field,$event)" style="width: 70%;" type="text">
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">No Thanks</button>
+    <button mat-button (click)="onAddClick()">Add</button>
+  </div>

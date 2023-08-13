@@ -1,0 +1,201 @@
+<div mat-dialog-title cdkDrag cdkDragRootElement=".cdk-overlay-pane" cdkDragHandle>
+    <h1 >Hi</h1>
+    <label for="selectSocialMedia">font family:</label>
+    <select name="selectSocialMedia" (change)='submitUserReason($event,"font-family" )' id="selectSocialMedia">
+        <option value="0">--SELECT--</option>
+        <option value="'Roboto'">'Roboto'</option>
+        <option value="cursive">cursive</option>
+        <option value="emoji">emoji</option>
+        <option value="fantasy">fantasy</option>
+        <option value="initial">initial</option>
+        <option value="math">math</option>
+        <option value="monospace">monospace</option>
+        <option value="sans-serif">sans-serif</option>
+        <option value="serif">serif</option>
+      </select>
+
+      <label for="selectSocialMedia">Background Color:</label>
+      <select name="selectSocialMedia" (change)='submitUserReason($event,"background" )' id="selectSocialMedia">
+        <option id='aliceblue'>aliceblue</option>
+        <option id='antiquewhite'>antiquewhite</option>
+        <option id='aqua'>aqua</option>
+        <option id='aquamarine'>aquamarine</option>
+        <option id='azure'>azure</option>
+        <option id='beige'>beige</option>
+        <option id='bisque'>bisque</option>
+        <option id='black'>black</option>
+        <option id='blanchedalmond'>blanchedalmond</option>
+        <option id='blue'>blue</option>
+        <option id='blueviolet'>blueviolet</option>
+        <option id='brown'>brown</option>
+        <option id='burlywood'>burlywood</option>
+        <option id='cadetblue'>cadetblue</option>
+        <option id='chartreuse'>chartreuse</option>
+        <option id='chocolate'>chocolate</option>
+        <option id='coral'>coral</option>
+        <option id='cornflowerblue'>cornflowerblue</option>
+        <option id='cornsilk'>cornsilk</option>
+        <option id='crimson'>crimson</option>
+        <option id='cyan'>cyan</option>
+        <option id='darkblue'>darkblue</option>
+        <option id='darkcyan'>darkcyan</option>
+        <option id='darkgoldenrod'>darkgoldenrod</option>
+        <option id='darkgrey'>darkgrey</option>
+        <option id='darkgreen'>darkgreen</option>
+        <option id='darkkhaki'>darkkhaki</option>
+        <option id='darkmagenta'>darkmagenta</option>
+        <option id='darkolivegreen'>darkolivegreen</option>
+        <option id='darkorange'>darkorange</option>
+        <option id='darkorchid'>darkorchid</option>
+        <option id='darkred'>darkred</option>
+        <option id='darksalmon'>darksalmon</option>
+        <option id='darkseagreen'>darkseagreen</option>
+        <option id='darkslateblue'>darkslateblue</option>
+        <option id='darkslategrey'>darkslategrey</option>
+        <option id='darkturquoise'>darkturquoise</option>
+        <option id='darkviolet'>darkviolet</option>
+        <option id='deeppink'>deeppink</option>
+        <option id='deepskyblue'>deepskyblue</option>
+        <option id='dimgray'>dimgray</option>
+        <option id='dodgerblue'>dodgerblue</option>
+        <option id='firebrick'>firebrick</option>
+        <option id='floralwhite'>floralwhite</option>
+        <option id='forestgreen'>forestgreen</option>
+        <option id='fuchsia'>fuchsia</option>
+        <option id='gainsboro'>gainsboro</option>
+        <option id='ghostwhite'>ghostwhite</option>
+        <option id='gold'>gold</option>
+        <option id='goldenrod'>goldenrod</option>
+        <option id='grey'>grey</option>
+        <option id='green'>green</option>
+        <option id='greenyellow'>greenyellow</option>
+        <option id='honeydew'>honeydew</option>
+        <option id='hotpink'>hotpink</option>
+        <option id='indianred'>indianred</option>
+        <option id='indigo'>indigo</option>
+        <option id='ivory'>ivory</option>
+        <option id='khaki'>khaki</option>
+        <option id='lavender'>lavender</option>
+        <option id='lavenderblush'>lavenderblush</option>
+        <option id='lawngreen'>lawngreen</option>
+        <option id='lemonchiffon'>lemonchiffon</option>
+        <option id='lightblue'>lightblue</option>
+        <option id='lightcoral'>lightcoral</option>
+        <option id='lightcyan'>lightcyan</option>
+        <option id='lightgoldenrodyellow'>lightgoldenrodyellow</option>
+        <option id='lightgrey'>lightgrey</option>
+        <option id='lightgreen'>lightgreen</option>
+        <option id='lightpink'>lightpink</option>
+        <option id='lightsalmon'>lightsalmon</option>
+        <option id='lightseagreen'>lightseagreen</option>
+        <option id='lightskyblue'>lightskyblue</option>
+        <option id='lightslategrey'>lightslategrey</option>
+        <option id='lightsteelblue'>lightsteelblue</option>
+        <option id='lightyellow'>lightyellow</option>
+        <option id='lime'>lime</option>
+        <option id='limegreen'>limegreen</option>
+        <option id='linen'>linen</option>
+        <option id='magenta'>magenta</option>
+        <option id='maroon'>maroon</option>
+        <option id='mediumaquamarine'>mediumaquamarine</option>
+        <option id='mediumblue'>mediumblue</option>
+        <option id='mediumorchid'>mediumorchid</option>
+        <option id='mediumpurple'>mediumpurple</option>
+        <option id='mediumseagreen'>mediumseagreen</option>
+        <option id='mediumslateblue'>mediumslateblue</option>
+        <option id='mediumspringgreen'>mediumspringgreen</option>
+        <option id='mediumturquoise'>mediumturquoise</option>
+        <option id='mediumvioletred'>mediumvioletred</option>
+        <option id='midnightblue'>midnightblue</option>
+        <option id='mintcream'>mintcream</option>
+        <option id='mistyrose'>mistyrose</option>
+        <option id='moccasin'>moccasin</option>
+        <option id='navajowhite'>navajowhite</option>
+        <option id='navy'>navy</option>
+        <option id='oldlace'>oldlace</option>
+        <option id='olive'>olive</option>
+        <option id='olivedrab'>olivedrab</option>
+        <option id='orange'>orange</option>
+        <option id='orangered'>orangered</option>
+        <option id='orchid'>orchid</option>
+        <option id='palegoldenrod'>palegoldenrod</option>
+        <option id='palegreen'>palegreen</option>
+        <option id='paleturquoise'>paleturquoise</option>
+        <option id='palevioletred'>palevioletred</option>
+        <option id='papayawhip'>papayawhip</option>
+        <option id='peachpuff'>peachpuff</option>
+        <option id='peru'>peru</option>
+        <option id='pink'>pink</option>
+        <option id='plum'>plum</option>
+        <option id='powderblue'>powderblue</option>
+        <option id='purple'>purple</option>
+        <option id='red'>red</option>
+        <option id='rosybrown'>rosybrown</option>
+        <option id='royalblue'>royalblue</option>
+        <option id='saddlebrown'>saddlebrown</option>
+        <option id='salmon'>salmon</option>
+        <option id='sandybrown'>sandybrown</option>
+        <option id='seagreen'>seagreen</option>
+        <option id='seashell'>seashell</option>
+        <option id='sienna'>sienna</option>
+        <option id='silver'>silver</option>
+        <option id='skyblue'>skyblue</option>
+        <option id='slateblue'>slateblue</option>
+        <option id='slategrey'>slategrey</option>
+        <option id='snow'>snow</option>
+        <option id='springgreen'>springgreen</option>
+        <option id='steelblue'>steelblue</option>
+        <option id='tan'>tan</option>
+        <option id='teal'>teal</option>
+        <option id='thistle'>thistle</option>
+        <option id='tomato'>tomato</option>
+        <option id='turquoise'>turquoise</option>
+        <option id='violet'>violet</option>
+        <option id='wheat'>wheat</option>
+        <option id='white'>white</option>
+        <option id='whitesmoke'>whitesmoke</option>
+        <option id='yellow'>yellow</option>
+        <option id='yellowgreen'>yellowgreen</option>
+        </select>
+
+        <label for="selectSocialMedia">font-style:</label>
+        <select name="selectSocialMedia" (change)='submitUserReason($event,"font-style" )' id="selectSocialMedia">
+            <option value="0">--SELECT--</option>
+            <option value="italic">italic</option>
+            <option value="normal">normal</option>
+            <option value="oblique">oblique</option>
+          </select><br>
+
+          <label for="selectSocialMedia">font-size:</label>
+        <select name="selectSocialMedia" (change)='submitUserReason($event,"font-size" )' id="selectSocialMedia">
+            <option value="0">--SELECT--</option>
+            <option value="large">large</option>
+            <option value="larger">larger</option>
+            <option value="medium">medium</option>
+
+            <option value="small">small</option>
+            <option value="smaller">smaller</option>
+            <option value="x-large">x-large</option>
+            <option value="x-small">x-small</option>
+            <option value="xx-large">xx-large</option>
+            <option value="xx-small">xx-small</option>
+          </select>
+
+          <label for="selectSocialMedia">border-radius:</label>
+        <select name="selectSocialMedia" (change)='submitUserReason($event,"border-radius" )' id="selectSocialMedia">
+            <option value="0">--SELECT--</option>
+            <option value="10px">10</option>
+            <option value="20px">20</option>
+            <option value="30px">30</option>
+
+            <option value="50px">50</option>
+            <option value="70px">70</option>
+            <option value="100px">100</option>
+            <option value="120px">120</option>
+            <option value="140px">140</option>
+          </select>
+    <div mat-dialog-actions>
+        <button mat-button (click)="onNoClick()">No Thanks</button>
+        <button mat-button  >Add</button>
+      </div>
+</div>

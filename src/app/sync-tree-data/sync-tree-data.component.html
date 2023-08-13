@@ -1,0 +1,291 @@
+<header class="sticky top-0 z-999 flex w-full bg-white drop-shadow-1 dark:bg-boxdark dark:drop-shadow-none">
+	<div style="justify-content: right;"
+		class="flex flex-grow items-center justify-between px-4 py-4 shadow-2 md:px-6 2xl:px-11">
+		<div class="hidden sm:block">
+			<form action="https://formbold.com/s/unique_form_id" method="POST">
+				<div class="relative"><button class="absolute left-0 top-1/2 -translate-y-1/2">
+						<svg class="fill-body hover:fill-primary dark:fill-bodydark dark:hover:fill-primary" width="20"
+							height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd"
+								d="M9.16666 3.33332C5.945 3.33332 3.33332 5.945 3.33332 9.16666C3.33332 12.3883 5.945 15 9.16666 15C12.3883 15 15 12.3883 15 9.16666C15 5.945 12.3883 3.33332 9.16666 3.33332ZM1.66666 9.16666C1.66666 5.02452 5.02452 1.66666 9.16666 1.66666C13.3088 1.66666 16.6667 5.02452 16.6667 9.16666C16.6667 13.3088 13.3088 16.6667 9.16666 16.6667C5.02452 16.6667 1.66666 13.3088 1.66666 9.16666Z"
+								fill=""></path>
+							<path fill-rule="evenodd" clip-rule="evenodd"
+								d="M13.2857 13.2857C13.6112 12.9603 14.1388 12.9603 14.4642 13.2857L18.0892 16.9107C18.4147 17.2362 18.4147 17.7638 18.0892 18.0892C17.7638 18.4147 17.2362 18.4147 16.9107 18.0892L13.2857 14.4642C12.9603 14.1388 12.9603 13.6112 13.2857 13.2857Z"
+								fill=""></path>
+						</svg></button><input type="text" placeholder="Type to search..."
+						class="w-full bg-transparent pl-9 pr-4 font-medium focus:outline-none xl:w-125">
+				</div>
+			</form>
+		</div>
+		<img style="width: 20px;z-index: 10" src="../../assets/logout.png">
+	</div>
+	<a style="position:absolute;top:17px;left:2%; ;">
+		<div class = 'img__wrap' >
+			
+			<img class="img-set " style="width: 50%;
+			padding: 2px;
+			background: lightblue;
+			border-radius: 15px;margin-top: -12px;
+			height: 120px;" alt="NicePage.com"
+			src= "{{this.user.profilePic}}"
+		
+		>
+		<span (click)="addImage('PROFILEIMAGE', false,null)" class="cursor-pointer profile_img__description">Update</span>
+		</div>
+		
+		<p class="label-style"> Vinit Jain</p><br/>
+		<div class="genre-style">
+			<p > Gamer, Sports, Fintess, Yoga, Healthy lifestyle</p>
+		</div>
+		
+	</a>
+		
+	<a style="position:absolute;top:17px;left:10px;" href="/">
+		<!-- <img alt="NicePage.com" src="//csite.nicepage.com/Images/logo-w.png">-->
+		</a>
+
+	<script>
+		if (window.parent) {
+			var _w = 0, _h = 0;
+			var updateFormSize = function () {
+				var form = $('form.shaped-form-extended,form.shaped-form');
+				var w = form.outerWidth(true);
+				var h = form.outerHeight(true);
+				if (Math.abs(_w - w) > 5 || Math.abs(_h - h) > 5) {
+					_w = w;
+					_h = h;
+					var msg = { key: 'login-frame-size', width: w, height: h };
+					window.parent.postMessage(msg, "*");
+				}
+				setTimeout(updateFormSize, 300);
+			}
+			updateFormSize();
+		}
+	</script>
+</header>
+<div [style.background]="background" id="content" class="content-style">
+	<div id="editRegion" style="background: aliceblue;">
+		<p style="font-weight: bold;" (click)="toggleEditRegion()">
+			Edit Region:
+		</p>
+		<div *ngIf="showEditRegion" style="overflow: auto;">
+			<table class="table" >
+				<tbody>
+				  <tr>
+					<td><button type="button" class="btn btn-success" (click)="addLink('LINK')">Add Link</button></td>
+					<td><button type="button" class="btn btn-success" (click)="addLink('LABEL')">Add Label</button></td>
+					<td><button type="button" class="btn btn-success" (click)="addLink('VIDEO')">Add Video</button></td>
+				  </tr>
+				  <tr>
+					<td><button type="button" class="btn btn-success" (click)="addImage('IMAGE',true,null)">Add Image</button></td>
+					<td><button type="button" class="btn btn-success" (click)="addLink('FORM')">Add Form Link</button></td>
+					<td><div (click)="backImageBio()">Add Background </div></td>
+				  </tr>
+				  <tr>
+					<td><div (click)="editSocialMedia()">Edit </div></td>
+					<td><div (click)="cancelEditSocialMedia()">Cancel </div></td>
+					<td><div (click)="addLink('FORM')">Open Dynamic form </div></td>
+				  </tr>
+				  <tr>
+					<td><div (click)="backImageBio()">Add Background </div></td>
+					<td><form>
+						<p>Update Profile Image:</p>
+						<input type="file" name="myFile" (change)="fileEvent($event)" />
+					</form></td>
+					<td><form>
+						<p>
+							Upload Image<br/>
+							<input type="file" name="myFile" (change)="fileEvent($event)" /><br/>
+							<button>upload</button>
+						</p>
+					</form></td>
+					
+				  </tr>
+				  <tr>
+					<td>
+						<p (click) = 'redirectDomain()'>Edit Domain</p>
+					</td>
+					<td>
+						<p (click) = 'redirectAnalytics()'>Analytics</p>
+					</td>
+				  </tr>
+				</tbody>
+			  </table>
+			<!-- <button type="button" class="btn btn-success" (click)="addLink('LINK')">Add Link</button><br />
+			<button type="button" class="btn btn-success" (click)="addLink('LABEL')">Add Label</button><br />
+			<button type="button" class="btn btn-success" (click)="addLink('VIDEO')">Add Video</button><br />
+			<button type="button" class="btn btn-success" (click)="addImage('IMAGE')">Add Image</button><br />
+			<br /> -->
+	
+			
+			
+			
+			
+			<span class="cursor-pointer"  (click)="shareSocialMediaLinks()">Share Links
+			</span>
+			
+			<!-- <form>
+				<p>Update Profile Image:</p>
+				<input type="file" name="myFile" (change)="fileEvent($event)" />
+				<button>Upload Image</button>
+			</form> -->
+			
+		</div>
+		
+	</div>
+	
+	<p>BIO:</p>
+	<ol cdkDropList style="--length: 5;" role="list" (cdkDropListDropped)="updateSequenceAndSave($event)">
+		<!-- style="font-family: cursive; background: aquamarine;font-weight: bold;
+		font-size: larger; font-style: italic;border-radius: 30px;border: 5px dotted black;" -->
+		<div *ngFor="let userSocial of this.userSocialMaps" cdkDrag>
+			<li *ngIf="userSocial.type == 'LINK'"  [ngStyle]="userSocial.styleObject">
+				<h6 style="color: deeppink;">
+				<span> 
+					<!-- <img src="../../assets/fblogo.png" style="width: 40px;height: 35px;"> &nbsp; -->
+					<img src= "{{userSocial.logo}}" style="width: 40px;height: 35px;"> &nbsp;
+				</span>
+				<a *ngIf="isEditMode" style="width: 70%;" class='text-decoration-none'
+						href="https://www.google.com/">{{userSocial.socialMediaLink}}</a>
+					<input *ngIf="!isEditMode" style="width: 70%;" type="text" [(ngModel)]="userSocial.socialMediaLink"
+						name="fname" value="{{userSocial.socialMediaLink}}">
+					<span style='float: right;'>
+	
+						<span class="cursor-pointer" *ngIf="!isEditMode"
+							(click)="socialMediaUpdate(userSocial)">Update</span>
+						<span class="cursor-pointer" style="font-size: large !important;" *ngIf="isEditMode" (click)="deleteSocialMedia(userSocial)">Delete
+						</span>
+						<span class="cursor-pointer" style="font-size: large !important;" *ngIf="isEditMode" (click)="openStyleDialog(userSocial)">/Style
+						</span>
+					</span>
+	
+				</h6>
+	
+			</li>
+
+			<li *ngIf="userSocial.type == 'FORM'" style="background: #c8d9e5;">
+				
+				<h6 style="color: deeppink;    font-family: cursive;
+				font-size: larger;
+				font-weight: bold;">
+				
+				<a *ngIf="isEditMode" style="width: 70%;" class='text-decoration-none'
+						(click)='openForm(userSocial)'>{{userSocial.title}}</a>
+					<input *ngIf="!isEditMode" style="width: 70%;" type="text" [(ngModel)]="userSocial.socialMediaLink"
+						name="fname" value="{{userSocial.socialMediaLink}}">
+					<span style='float: right;'>
+	
+						<span class="cursor-pointer" *ngIf="!isEditMode" (click)="socialMediaUpdate(userSocial)">Update</span>
+						<span class="cursor-pointer" style="font-size: large !important;" *ngIf="isEditMode" (click)="deleteSocialMedia(userSocial)">Delete
+						</span>
+						
+					</span>
+	
+				</h6>
+	
+			</li>
+
+			<div  class="setBack img__wrap zoom" *ngIf="userSocial.type == 'IMAGE'"  [ngStyle]="userSocial.styleObject">
+				<div>
+					<img class="img-set " src= "{{userSocial.value}}">
+				</div>
+				
+				<div class="cursor-pointer img__description" style="font-size: large !important;" 
+				*ngIf="isEditMode" > &nbsp;&nbsp;&nbsp;&nbsp;
+				<span (click)="deleteSocialMedia(userSocial)">Delete</span> <span (click)="addImage('IMAGE', false,userSocial)"> &nbsp;&nbsp;&nbsp;&nbsp; Update</span>
+			</div>
+				
+<!-- <youtube-player-example></youtube-player-example> -->
+			</div>
+
+			<div  class="setBack img__wrap zoom" *ngIf="userSocial.type == 'IMAGE'" style="border-radius: 30px;width: 21rem;"  [ngStyle]="userSocial.styleObject">
+				<div >
+					<img class="img-set" style="border: 2px solid black;
+					border-radius: 28px;" src= "{{userSocial.value}}">
+					<p style="
+					margin-left: 24px;
+					font-weight: 500;
+				">Title : Gajra Gang by Nykaa Fashion</p>
+				<p style="margin-left: 24px;">Golabar Multi-color Pleated Pants</p>
+			<p style="margin-left: 24px;">
+				<span style="
+				color: lightslategrey;
+			"><s>&#8377; 5000</s></span> <span> &nbsp; &#8377; 3000</span></p> 
+			<p style="margin-left: 24px;">&nbsp;</p> 
+				</div>
+				
+				<div class="cursor-pointer img__description" style="font-size: large !important;" 
+				*ngIf="isEditMode" (click)="deleteSocialMedia(userSocial)"> &nbsp;&nbsp;&nbsp;&nbsp;
+				<span>Delete</span> <span> &nbsp;&nbsp;&nbsp;&nbsp; Update</span>
+			</div>
+				
+<!-- <youtube-player-example></youtube-player-example> -->
+			</div>
+			<div class="setBack" *ngIf="userSocial.type == 'LABEL'">
+				<label for="html">This is Label</label>
+				<span class="cursor-pointer" style="font-size: large !important;float: right;" *ngIf="isEditMode" (click)="deleteSocialMedia(userSocial)">Delete
+				</span>
+				<!-- triangle shaped div
+					 <div class="kwadrat2">
+					<div class="trojkat2">
+					  <div class="trojkat_bg2"></div>	
+					</div>
+				  </div> -->
+<!-- <youtube-player-example></youtube-player-example> -->
+			</div>
+			<div class="setBack-video img__wrap" *ngIf="userSocial.type == 'VIDEO'">
+				<!-- <youtube-player videoId="{{userSocial.socialMediaLink}}"
+				width="100%"
+				height="90%"></youtube-player> -->
+				<app-youtube-vid [id]="userSocial.socialMediaLink"></app-youtube-vid>
+				<div class="cursor-pointer img__description" style="font-size: large !important;" 
+				*ngIf="isEditMode" (click)="deleteSocialMedia(userSocial)"> &nbsp;&nbsp;&nbsp;&nbsp;
+				<span>Delete</span> <span> &nbsp;&nbsp;&nbsp;&nbsp; Update</span>
+			</div>
+<!-- <youtube-player-example></youtube-player-example> -->
+			</div>
+		</div>
+		
+	</ol>
+	<p>BRAND:</p>
+	<ol style="--length: 5;" role="list">
+		<!-- <li style="--i: 1" style="background: #c8d9e5;">
+			<h6 style="color: deeppink;    font-family: cursive;
+			font-size: larger;
+			font-weight: bold;"><a  class='text-decoration-none' href="https://www.google.com/">Skechers</a></h6>
+		</li>
+		<li style="--i: 1" style="background: #c8d9e5;">
+			<h6 style="color: deeppink;    font-family: cursive;
+			font-size: larger;
+			font-weight: bold;"><a  class='text-decoration-none' href="https://www.google.com/">Skechers</a></h6>
+		</li> -->
+		<!-- <li style="--i: 2">
+			<h6><a class='text-decoration-none' href="https://www.google.com/">Nike</a></h6>
+		</li>
+		<li style="--i: 3">
+			<h6><a class='text-decoration-none' href="https://www.google.com/">Skechers</a></h6>
+		</li>
+		<li style="--i: 4">
+			<h6><a class='text-decoration-none' href="https://www.google.com/">Whoop</a></h6>
+		</li>
+		<li style="--i: 5">
+			<h6><a class='text-decoration-none' href="https://www.google.com/">link text</a></h6>
+		</li>
+		<li style="--i: 1">
+			<h6><a class='text-decoration-none' href="https://www.google.com/">youtube</a></h6>
+		</li>
+		<li style="--i: 2">
+			<h6><a class='text-decoration-none' href="https://www.google.com/">link text</a></h6>
+		</li>
+		<li style="--i: 3">
+			<h6><a class='text-decoration-none' href="https://www.google.com/">link text</a></h6>
+		</li>
+		<li style="--i: 4">
+			<h6><a class='text-decoration-none' href="https://www.google.com/">link text</a></h6>
+		</li>
+		<li style="--i: 5">
+			<h6><a class='text-decoration-none' href="https://www.google.com/">link text</a></h6>
+		</li> -->
+	</ol>
+
+</div>
